@@ -101,7 +101,7 @@ class _CustomProgressBarState extends State<CustomProgressBar>
                       widget.colorProgressGradient,
                     ]).createShader(bounds);
                   },
-                  child: ProgressBarrCustom(
+                  child: ColorBar(
                     colorProgressGradient: widget.colorProgressGradient,
                     duration: widget.duration,
                     height: widget.height,
@@ -109,7 +109,7 @@ class _CustomProgressBarState extends State<CustomProgressBar>
                     percent: widget.percent,
                   ),
                 )
-              : ProgressBarrCustom(
+              : ColorBar(
                   colorProgressGradient: widget.colorProgressGradient,
                   duration: widget.duration,
                   height: widget.height,
@@ -122,14 +122,14 @@ class _CustomProgressBarState extends State<CustomProgressBar>
   }
 }
 
-class ProgressBarrCustom extends StatefulWidget {
+class ColorBar extends StatefulWidget {
   final num percent;
   final double maxWidth;
   final Color colorProgressGradient;
   final double? height;
   final int duration;
 
-  const ProgressBarrCustom({
+  const ColorBar({
     Key? key,
     required this.percent,
     required this.maxWidth,
@@ -139,10 +139,10 @@ class ProgressBarrCustom extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ProgressBarrCustom> createState() => _ProgressBarrCustomState();
+  State<ColorBar> createState() => _ColorBarState();
 }
 
-class _ProgressBarrCustomState extends State<ProgressBarrCustom> {
+class _ColorBarState extends State<ColorBar> {
   double getPercentProgress(dynamic value, double width) {
     double _total = double.parse(width.toString());
     double _percent = double.parse(value.toString());

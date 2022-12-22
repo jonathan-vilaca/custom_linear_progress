@@ -70,15 +70,16 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: 100,
+              width: MediaQuery.of(context).size.width,
               child: CustomProgressBar(
                 percent: _percent,
-                colorProgress: _color,
+                colorProgressGradient: _color,
                 backgroundColor: Colors.grey.withOpacity(0.15),
-                height: 5,
+                height: 30,
                 // radius: 0,
                 gradient: true,
-                delayed: 2000,
+                duration: 2000,
+                animated: true,
               ),
             ),
             Text(_percent.toInt().toString() + '%'),
